@@ -3,7 +3,7 @@ import { AuthContext } from '../context/AuthContext';
 import { LogOut, Moon, Sun } from 'lucide-react';
 
 export default function Settings() {
-  const { logout } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
 
   return (
     <div className="space-y-8 max-w-2xl">
