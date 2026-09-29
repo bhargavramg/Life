@@ -1,4 +1,4 @@
-import { Check, Clock, Trash2, Calendar, MoreHorizontal } from 'lucide-react';
+import { Check, Clock, Trash2, MoreHorizontal } from 'lucide-react';
 import { cn } from '../lib/utils';
 import api from '../api';
 

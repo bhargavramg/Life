@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import api from '../api';
 import TaskCard from '../components/TaskCard';
 import TaskModal from '../components/TaskModal';
-import { Search, Filter, ArrowUpDown } from 'lucide-react';
+import { Search } from 'lucide-react';
 
 export default function Tasks() {
   const [tasks, setTasks] = useState<any[]>([]);

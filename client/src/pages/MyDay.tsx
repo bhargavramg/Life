@@ -76,7 +76,7 @@ export default function MyDay() {
             </div>
           ) : (
             tasksList
-              .sort((a: any, b: any) => (a.status === 'Completed' ? 1 : -1))
+              .sort((a: any, _b: any) => (a.status === 'Completed' ? 1 : -1))
               .map((task: any) => (
                 <TaskCard 
                   key={task.id} 

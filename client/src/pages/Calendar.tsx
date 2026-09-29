@@ -52,7 +52,7 @@ export default function Calendar() {
   const renderDays = () => {
     const dateFormat = 'EEE';
     const days = [];
-    let startDate = startOfWeek(currentMonth, { weekStarts: 1 });
+    let startDate = startOfWeek(currentMonth, { weekStartsOn: 1 });
     for (let i = 0; i < 7; i++) {
       days.push(
         <div className="text-center font-medium text-xs text-textSecondary py-2 uppercase" key={i}>
@@ -66,8 +66,8 @@ export default function Calendar() {
   const renderCells = () => {
     const monthStart = startOfMonth(currentMonth);
     const monthEnd = endOfMonth(monthStart);
-    const startDate = startOfWeek(monthStart, { weekStarts: 1 });
-    const endDate = endOfWeek(monthEnd, { weekStarts: 1 });
+    const startDate = startOfWeek(monthStart, { weekStartsOn: 1 });
+    const endDate = endOfWeek(monthEnd, { weekStartsOn: 1 });
 
     const rows = [];
     let days = [];
@@ -77,7 +77,6 @@ export default function Calendar() {
     while (day <= endDate) {
       for (let i = 0; i < 7; i++) {
         formattedDate = format(day, 'd');
-        const cloneDay = day;
         const dayStr = format(day, 'yyyy-MM-dd');
         
         // Find tasks for this day

@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import api from '../api';
-import { format, subDays, addDays } from 'date-fns';
+import { format,  } from 'date-fns';
 import TaskCard from '../components/TaskCard';
 import TaskModal from '../components/TaskModal';
 
@@ -13,8 +13,6 @@ export default function Home() {
   const [taskToEdit, setTaskToEdit] = useState(null);
 
   const todayStr = format(new Date(), 'yyyy-MM-dd');
-  const yesterdayStr = format(subDays(new Date(), 1), 'yyyy-MM-dd');
-  const tomorrowStr = format(addDays(new Date(), 1), 'yyyy-MM-dd');
 
   const fetchTasks = async () => {
     try {
@@ -129,7 +127,7 @@ export default function Home() {
             </div>
           ) : (
             todayTasks
-              .sort((a, b) => (a.status === 'Completed' ? 1 : -1))
+              .sort((a, _b) => (a.status === 'Completed' ? 1 : -1))
               .map(task => (
                 <TaskCard 
                   key={task.id} 
