@@ -3,15 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "npm run build --prefix client",
-    "postinstall": "prisma generate --schema=server/prisma/schema.prisma"
+    "build": "prisma generate --schema=server/prisma/schema.prisma && npm run build --prefix client"
   },
   "workspaces": [
     "client",
     "server"
   ],
   "dependencies": {
-    "@prisma/client": "^5.10.0",
+    "@prisma/client": "^5.22.0",
     "prisma": "^5.22.0"
   }
 }
