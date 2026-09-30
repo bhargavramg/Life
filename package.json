@@ -4,6 +4,10 @@
   "private": true,
   "scripts": {
     "build": "npm run build --prefix client",
-    "postinstall": "npm install --prefix client && npm install --prefix server && npx prisma generate --schema=server/prisma/schema.prisma"
-  }
+    "postinstall": "cd server && npx prisma generate"
+  },
+  "workspaces": [
+    "client",
+    "server"
+  ]
 }
